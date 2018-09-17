@@ -1,3 +1,18 @@
+### Considérations de l'énoncé
+
+Il y a deux contradictions et des imprécisions dans l'énoncé, je vais les dévelloper
+et indiquer le partis pris pour les résoudre:
+
+ - delete: les examples ne montrent pas de cas d'échec pour la
+   suppression de clé, j'ai décidé de rendre l'opération d'effacement
+   inactive si la clé n'est pas présente dans la base de donnée,
+
+ - put: les examples sont ici contradictoires avec myDb.createTransaction(“abc”);
+        suivi de myDb.put(“a”, “foo”, “abc”); qui est valide mais pas myDb.createTransaction(“def”);
+		suivi de myDb.put(“b”, “foo”, “def”);
+		J'ai conservé le comportement du premier cas.
+
+### Compilation
 Compiler et lancer les tests avec:
 g++ --std=c++14 -c -g database.cpp main.cpp && g++ --std=c++14 -o database database.o main.o -lm -lpthread && ./database
 
