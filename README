@@ -1,0 +1,4 @@
+Compiler et lancer les tests avec:
+g++ --std=c++14 -c -g database.cpp main.cpp && g++ --std=c++14 -o database database.o main.o -lm -lpthread && ./database
+
+Bonne lecture!
